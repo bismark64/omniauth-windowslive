@@ -10,13 +10,13 @@ module OmniAuth
       DEFAULT_SCOPE = 'wl.basic,wl.emails,wl.photos'
 
       option :client_options, {
-        :site => 'https://oauth.live.com',
-        :authorize_url => '/authorize',
-        :token_url => '/token'
+        site: 'https://login.live.com',
+        authorize_url: '/oauth20_authorize.srf',
+        token_url: '/oauth20_token.srf'
       }
 
       option :authorize_params, {
-        :response_type => 'code'
+        response_type: 'code'
       }
 
       option :name, 'windowslive'
@@ -28,6 +28,7 @@ module OmniAuth
         {
           'id' => raw_info['id'],
           'name' => raw_info['name'],
+          'email' => raw_info['emails']['preferred'] || raw_info['emails']['account'],
           'first_name' => raw_info['first_name'],
           'last_name' => raw_info['last_name'],
           'gender' => raw_info['gender'],

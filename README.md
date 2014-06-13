@@ -2,19 +2,26 @@
 
 This gem contains the unofficial WindowsLive strategy for OmniAuth.
 
+## Register your app
+Like any other oauth strategy you have to register your page in the [Live Developers Apps dashboard](https://account.live.com/developers/applications/index)
+
 ## Basic Usage
+```ruby
+# config/initializers/windowslive	
+use OmniAuth::Builder do
+  provider "windowslive", ENV['WINDOWSLIVE_CLIENT_ID'], ENV['WINDOWSLIVE_SECRET']
+end
+```
 
-	use OmniAuth::Builder do
-		provider "windowslive", ENV['WINDOWSLIVE_CLIENT_ID'], ENV['WINDOWSLIVE_SECRET'], :scope => 'wl.basic'
-	end
+### using with Devise
+```ruby
+# config/initializers/devise.rb
+Devise.setup do |config|
+  config.omniauth :windowslive, ENV['WINDOWSLIVE_CLIENT_ID'], ENV['WINDOWSLIVE_SECRET']
+end
+```
 
-## Supported Flows
-
-for create app
-# https://manage.dev.live.com/Applications/Index?wa=wsignin1.0 OR https://manage.dev.live.com/AddApplication.aspx?tou=1
-
-## Ruby
-
+## Tests
 Tested with the following Ruby versions:
 
-- RUBY 1.9.3-p0
+- RUBY 2.1.2

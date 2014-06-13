@@ -5,9 +5,9 @@ require 'omniauth/windowslive/version'
 Gem::Specification.new do |s|
   s.name        = "omniauth-windowslive"
   s.version     = OmniAuth::Windowslive::VERSION
-  s.authors     = ["Joel AZEMAR"]
-  s.email       = ["joel.azemar@gmail.com"]
-  s.homepage    = "https://github.com/joel/omniauth-windowslive"
+  s.authors     = ["Emiliano Coppo", "Joel AZEMAR"]
+  s.email       = ["bismark64@gmail.com"]
+  s.homepage    = "https://github.com/bismark64/omniauth-windowslive"
   s.summary     = 'Windows Live, Hotmail, SkyDrive, Windows Live Messenger, and other services... strategy for OmniAuth'
 
   s.rubyforge_project = "omniauth-windowslive"
@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency 'omniauth-oauth2', '~> 1.0'
-  s.add_dependency 'multi_json', '>= 1.0.3'
-  s.add_development_dependency 'rspec', '~> 2.7'
+  s.add_dependency 'omniauth-oauth2', '~> 1.1.2'
+  s.add_dependency 'multi_json', '~> 1.10.1'
+  s.add_development_dependency 'rspec', '~> 3.0.0'
   s.add_development_dependency 'rack-test'
   s.add_development_dependency 'webmock'
 end
