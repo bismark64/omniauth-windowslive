@@ -6,6 +6,7 @@ require 'omniauth/strategies/oauth2'
 module OmniAuth
   module Strategies
     class Windowslive < OmniAuth::Strategies::OAuth2
+      option :name, 'windowslive'
       # Scopes and permissions => http://msdn.microsoft.com/en-us/library/hh243646.aspx
       DEFAULT_SCOPE = 'wl.basic,wl.emails,wl.photos'
 
@@ -15,11 +16,7 @@ module OmniAuth
         token_url: '/oauth20_token.srf'
       }
 
-      option :authorize_params, {
-        response_type: 'code'
-      }
-
-      option :name, 'windowslive'
+      option :authorize_params, { response_type: 'code', scope: DEFAULT_SCOPE }
 
       uid { raw_info['id'] }
 
@@ -53,4 +50,5 @@ module OmniAuth
     end
   end
 end
+
 OmniAuth.config.add_camelization 'windowslive', 'Windowslive'
