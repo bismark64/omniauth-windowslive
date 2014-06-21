@@ -1,10 +1,10 @@
 # OmniAuth Windows Live
 
 This gem contains the unofficial WindowsLive strategy for OmniAuth.
-It originally forked from [joel's gem](https://github.com/joel/omniauth-windowslive).
+It was originally forked from [joel's gem](https://github.com/joel/omniauth-windowslive).
 
 ## App registration
-Like any other oauth strategy you have to register your page in the [Live Developers Apps dashboard](https://account.live.com/developers/applications/index)
+Like any other oauth strategy you have to register your page in the [Windows Live Developers Apps dashboard](https://account.live.com/developers/applications/index)
 
 ## Installation
 ```ruby
@@ -17,7 +17,7 @@ gem 'omniauth-windowslive', git: 'http://github.com/bismark64/omniauth-windowsli
 use OmniAuth::Builder do
   provider "windowslive", ENV['WINDOWSLIVE_CLIENT_ID'], ENV['WINDOWSLIVE_SECRET']
 end
-
+```
 ### Using with Devise
 ```ruby
 # config/initializers/devise.rb
